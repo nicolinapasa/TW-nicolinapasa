@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Înregistrare</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/register_style.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <section class="card">
+
+            <h1>Creare cont</h1>
+
+            <form class="register-form" action="#" method="post"
+                enctype="multipart/form-data">
+
+                <div class="row">
+                    <label for="name">Nume</label>
+                    <input type="text" id="name" name="name"
+                        placeholder="Nume și prenume" required>
+                </div>
+
+                <div class="row">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email"
+                        placeholder="exemplu@email.com" required>
+                </div>
+
+                <div class="row">
+                    <label for="password">Parolă</label>
+                    <input type="password" id="password" name="password"
+                        placeholder="Parola" required>
+                </div>
+
+                <div class="row">
+                    <label for="birthdate">Data nașterii</label>
+                    <input type="date" id="birthdate" name="birthdate">
+                </div>
+
+                <div class="row">
+                    <label>Gen</label>
+
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="gender" value="male">
+                            Masculin
+                        </label>
+
+                        <label>
+                            <input type="radio" name="gender" value="female">
+                            Feminin
+                        </label>
+
+                        <label>
+                            <input type="radio" name="gender" value="other">
+                            Altul
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label for="country">Țara</label>
+
+                    <select id="country" name="country">
+                        <option value="">Alege țara</option>
+                        <option value="romania">România</option>
+                        <option value="moldova">Republica Moldova</option>
+                        <option value="italy">Italia</option>
+                        <option value="other">Alta</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <label>Hobby-uri</label>
+
+                    <div class="checkbox-grid">
+                        <label>
+                            <input type="checkbox" name="hobbies" value="programming">
+                            Programare
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="hobbies" value="music">
+                            Muzică
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="hobbies" value="gaming">
+                            Gaming
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="hobbies" value="travel">
+                            Călătorii
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label for="profile">Poză de profil</label>
+                    <input type="file" id="profile" name="profile">
+                </div>
+
+                <div class="actions">
+                    <button type="submit" class="btn primary">
+                        Înregistrează-te
+                    </button>
+
+                    <button type="reset" class="btn ghost">
+                        Resetează
+                    </button>
+                </div>
+
+                <p class="login-link">
+                    Ai deja cont?
+                    <a href="login.html">Autentifică-te</a>
+                </p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
