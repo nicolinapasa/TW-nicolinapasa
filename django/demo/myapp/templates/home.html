@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunitatea de Tehnologii Web</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cursor.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Comunitatea de Tehnologii Web 2025</h1>
+            <nav>
+                <a href="{% url 'home' %}">Acasă</a>
+                <a href="{% url 'galerie' %}">Galerie</a>
+                <a href="{% url 'chatbot' %}">Chatbot</a>
+                <a href="{% url 'universities' %}">Universități</a>
+                <a href="{% url 'login' %}">Ieșire</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="columns">
+            <div class="column">
+                <h2>HTML *&* CSS</h2>
+                <p>
+                    Învață să creezi pagini web folosind HTML
+                    și CSS și descoperă elementele de bază
+                    ale dezvoltării web.
+                </p>
+                <a href="#" class="btn">
+                    Vezi mai mult
+                </a>
+            </div>
+
+            <div class="column">
+                <h2>JavaScript</h2>
+                <p>
+                    Descoperă cum poți adăuga interactivitate
+                    și funcționalități dinamice paginilor tale web.
+                </p>
+                <a href="#" class="btn">
+                    Vezi mai mult
+                </a>
+            </div>
+
+            <div class="column">
+                <h2>Proiecte Web</h2>
+                <p>
+                    Explorează proiecte realizate de studenți
+                    și găsește idei pentru propriile proiecte
+                    de dezvoltare web.
+                </p>
+                <a href="#" class="btn">
+                    Vezi mai mult
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                &copy; 2026 Comunitatea de Tehnologii Web
+            </p>
+            <p>
+                <a href="https://www.uvt.ro/">
+                    Universitatea de Vest din Timișoara
+                </a>
+                |
+                <a href="https://info.uvt.ro/">
+                    Facultatea de Informatică
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="{% static 'TS/cursor.js' %}"></script>
+</body>
+
+</html>

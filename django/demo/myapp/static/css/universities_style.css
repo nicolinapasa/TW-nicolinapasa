@@ -1,0 +1,201 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-color: #0f172a;
+    color: #e5e7eb;
+    font-family: Arial, sans-serif;
+    overflow: hidden;   /* pagina NU se scroll-ează — doar tabelul */
+}
+
+/* Layout pe verticală: header fix sus + tabel care umple restul */
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px;
+    gap: 12px;
+}
+
+/* ---------- HEADER ---------- */
+
+.app-header {
+    flex: 0 0 auto;
+    background-color: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 16px 20px;
+}
+
+h1 {
+    margin: 0 0 12px 0;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+input {
+    flex: 1 1 240px;
+    padding: 0.55rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background-color: #0b1220;
+    color: #e5e7eb;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus {
+    border-color: #3471B8;
+    box-shadow: 0 0 0 3px rgba(52, 113, 184, 0.25);
+}
+
+#exportBtn {
+    padding: 0.55rem 1.1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #3471B8;
+    color: white;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.15s ease;
+}
+
+#exportBtn:hover {
+    background-color: #024A76;
+}
+
+.status {
+    margin-top: 10px;
+    min-height: 18px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ---------- ZONA TABELULUI ---------- */
+
+.app-body {
+    flex: 1 1 auto;
+    min-height: 0;                /* esențial: permite flex-ului să limiteze înălțimea */
+    background-color: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    overflow: hidden;             /* colțuri rotunjite fără să taie conținutul */
+}
+
+/* Aici se întâmplă scroll-ul — tabelul nu mai împinge pagina */
+.table-scroll {
+    height: 100%;
+    overflow: auto;
+    overflow-anchor: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #1e293b;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.92rem;
+    padding: 0.7rem 0.75rem;
+    border-bottom: 1px solid #334155;
+}
+
+tbody td {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid #1f2937;
+    vertical-align: top;
+    font-size: 0.92rem;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+
+tbody tr:hover {
+    background-color: #0f172a;
+}
+
+.col-name    { width: 40%; }
+.col-country { width: 15%; }
+.col-site    { width: 45%; }
+
+td a {
+    color: #a7f3d0;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+.loading-cell {
+    text-align: center;
+    opacity: 0.7;
+    padding: 1rem;
+    font-style: italic;
+}
+
+/* ---------- MOBIL ---------- */
+
+@media (max-width: 700px) {
+    .app {
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .app-header {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    input,
+    #exportBtn {
+        width: 100%;
+        flex: none;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    thead th,
+    tbody td {
+        padding: 8px;
+    }
+}
