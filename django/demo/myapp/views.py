@@ -20,3 +20,6 @@ def chatbot(request):
 
 def galerie(request):
     return render(request, "galerie.html")
+
+def meals(request):
+    return render(request, "meals.html")
